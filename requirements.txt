@@ -1,0 +1,4 @@
+discord.py==1.7.3
+ping3==4.0.3
+python-decouple==3.6
+selenium==4.4.0
