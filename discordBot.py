@@ -6,7 +6,7 @@ import asyncio
 
 
 TOKEN= config('TOKEN')
-ID_CHANNEL_PASSPORD=int(config('ID_CHANNEL_PASSPORD'))
+ID_CHANNEL_PASSWORD=int(config('ID_CHANNEL_PASSWORD'))
 
 class DiscordHost(Client):
 
@@ -14,9 +14,8 @@ class DiscordHost(Client):
     async def on_ready(self):
         print('Logged in as')
         print(self.user.name)
-        print(self.user.id)
         print('------')
-        channel  = self.get_channel(ID_CHANNEL_PASSPORD)
+      
         #await channel.send('The bot is online ')
 
 
@@ -29,7 +28,7 @@ class DiscordHost(Client):
             await message.channel.send('Hello {0.author.mention}'.format(message))
 
     async def sendMessage(self, msg):
-        channel = self.get_channel(ID_CHANNEL_PASSPORD)
+        channel = self.get_channel(ID_CHANNEL_PASSWORD)
         await channel.send(msg)
 
 class ThreaderBot(Thread):
@@ -46,7 +45,7 @@ class ThreaderBot(Thread):
         await self.discord_client.start(TOKEN)     
 
     async def sendMessaged(self, msg):
-        channel = self.discord_client.get_channel(ID_CHANNEL_PASSPORD)
+        channel = self.discord_client.get_channel(ID_CHANNEL_PASSWORD)
         await channel.send(msg) 
 
     def run(self):
