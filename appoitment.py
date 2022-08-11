@@ -2,9 +2,16 @@ from pydoc import classname
 from selenium import webdriver                                                                                                                                                   
 from selenium.webdriver.common.by import By                                                                                                                                      
 from selenium.webdriver.chrome.options import Options                                                                                                                           
-from discordBot import *                                                                                                                                                                                                                                                                                                               
+from discordBot import * 
+import argparse                                                                                                                                                                                                                                                                                                              
 import time      
 
+
+#init param
+
+parser = argparse.ArgumentParser(description='Information')
+parser.add_argument('--browser', dest='browser', type=str, help='Enable browser y/Y n/N', default='y')
+args = parser.parse_args()
 
 try :
     PATH_CHROME_DRIVER = config('PATH_CHROME_DRIVER')
@@ -17,13 +24,19 @@ try :
 except :
     TIME_TO_TESTING_APPOITMENT = 60
 
+
+
 clientDiscord = ThreaderBot()
-chrome_options = Options()                                                                                                                                                                                                                                                                                                           
-chrome_options.add_argument("--disable-extensions")                                                                                                                             
-chrome_options.add_argument("--disable-gpu")                                                                                                                                    
-chrome_options.add_argument("--no-sandbox") # linux only                                                                                                                        
-chrome_options.add_argument("--headless")                                                                                                                                       
-chrome_options.executable_path = PATH_CHROME_DRIVER                                                                                                                                                                                                                                                                             
+chrome_options = Options()      
+
+if  args.browser.upper() == 'N':                                                                                                                                                                                                                                                                                                   
+    chrome_options.add_argument("--disable-extensions")                                                                                                                             
+    chrome_options.add_argument("--disable-gpu")                                                                                                                                    
+    chrome_options.add_argument("--no-sandbox") # linux only                                                                                                                        
+    chrome_options.add_argument("--headless")       
+
+chrome_options.executable_path = PATH_CHROME_DRIVER  
+
 driver = webdriver.Chrome(options=chrome_options)          
                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 i = 0               

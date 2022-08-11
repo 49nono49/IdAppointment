@@ -15,13 +15,14 @@ If you are using Chrome version 103, please download [ChromeDriver 103.0.5060.13
 
 # env variable
 
-TOKEN    token discord BOT <br/>
-ID_CHANNEL_PASSWORD=   id discord channel<br/>
+create .env file
+<pre><code>
+TOKEN =    token discord BOT <br/>
+ID_CHANNEL_PASSWORD =   id discord channel<br/>
 PATH_CHROME_DRIVER =   chromedriver PATH<br/>
 TIME_TO_TESTING_APPOITMENT =  time to check appoitment seconde<br/>
+</code></pre>
 
 # Install
-
-pip install -r  requirements.txt<br/>
-
-python appoitment.py
+<pre><code>pip install -r  requirements.txt</code></pre>
+<pre><code>python appoitment.py</code></pre>
