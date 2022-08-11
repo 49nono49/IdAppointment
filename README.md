@@ -1,5 +1,6 @@
 # IdAppointment
-Signal a appointment available at St Herblain city hall
+
+Signal a appointment  available at St Herblain city hall on Discord channel
 
 # Need to get ChromeDriver
 
@@ -14,12 +15,13 @@ If you are using Chrome version 103, please download [ChromeDriver 103.0.5060.13
 
 # env variable
 
-TOKEN    token discord BOT 
-ID_CHANNEL_PASSWORD=   id discord channel
-PATH_CHROME_DRIVER =   chromedriver PATH
-TIME_TO_TESTING_APPOITMENT =  time to check appoitment seconde
+TOKEN    token discord BOT <br/>
+ID_CHANNEL_PASSWORD=   id discord channel<br/>
+PATH_CHROME_DRIVER =   chromedriver PATH<br/>
+TIME_TO_TESTING_APPOITMENT =  time to check appoitment seconde<br/>
 
-# install
+# Install
 
-pip install -r  requirements.txt
+pip install -r  requirements.txt<br/>
+
 python appoitment.py
