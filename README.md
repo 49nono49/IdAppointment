@@ -26,3 +26,9 @@ TIME_TO_TESTING_APPOITMENT =  time to check appoitment seconde<br/>
 # Install
 <pre><code>pip install -r  requirements.txt</code></pre>
 <pre><code>python appoitment.py</code></pre>
+
+# Args
+
+    -m, --mode  I/i/P/p select id or passport appoitment, default = P
+
+    -b, --browser y/Y/n/N open or not the browser, default = Y

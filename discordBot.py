@@ -52,3 +52,7 @@ class ThreaderBot(Thread):
         self.setName('Discord.py')
         self.loop.create_task(self.starter())
         self.loop.run_forever()
+    
+    def stop(self):
+        #self.discord_client.close()
+        self.loop.stop()
