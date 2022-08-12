@@ -1,4 +1,6 @@
+from concurrent.futures import thread
 from pydoc import classname
+import threading
 import types
 from typing import Optional
 from selenium import webdriver
@@ -73,7 +75,8 @@ chrome_options.executable_path = PATH_CHROME_DRIVER
 driver = webdriver.Chrome(options=chrome_options)
 
 i = 0
-while True:
+flag = threading.Event()
+while flag.is_set() is False:
 
     driver.get(URL_APPOITMENT)
     # wait all element are load
@@ -105,4 +108,7 @@ while True:
 
         l.create_task(clientDiscord.sendMessage(msg))
         driver.close()
-        break
+        flag.set()
+        
+clientDiscord.stop()
+clientDiscord.join()
