@@ -27,7 +27,7 @@ class DiscordHost(Client):
         if message.content.startswith('!hello'):
             await message.channel.send('Hello {0.author.mention}'.format(message))
 
-    async def sendMessage(self, msg):
+    async def sendMessage(self, msg: str):
         channel = self.get_channel(ID_CHANNEL_PASSWORD)
         await channel.send(msg)
 
@@ -44,7 +44,7 @@ class ThreaderBot(Thread):
         self.discord_client = DiscordHost()
         await self.discord_client.start(TOKEN)     
 
-    async def sendMessaged(self, msg):
+    async def sendMessage(self, msg: str):
         channel = self.discord_client.get_channel(ID_CHANNEL_PASSWORD)
         await channel.send(msg) 
 
