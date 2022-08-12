@@ -1,4 +1,4 @@
-from concurrent.futures import thread
+# -*- coding : latin1 -*-
 from pydoc import classname
 import threading
 import types
